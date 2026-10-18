@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup><Compile Include="../windows/NotebookScanner/Wire.cs" Link="Wire.cs" /></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../windows/NotebookScanner/ConnectionRetry.cs" Link="ConnectionRetry.cs" />
+    <Compile Include="../windows/NotebookScanner/DeviceMemory.cs" Link="DeviceMemory.cs" />
+  </ItemGroup>
+</Project>
