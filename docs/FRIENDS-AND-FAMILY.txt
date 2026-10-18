@@ -1,0 +1,66 @@
+Notebook Scanner - friends and family beta 0.5
+
+For Android phones (Android 9 or newer) and Windows x64 laptops with Bluetooth.
+Not an iPhone or Mac app. No accounts, ads, cables, or developer tools needed.
+
+INSTALL
+
+1. On your laptop, extract the ZIP and open NotebookScanner-0.5-Windows-Setup.exe.
+   Install it, then open Notebook Scanner from your Start Menu.
+   This early Windows build is unsigned, so Windows may show a publisher warning.
+   Only install a copy you received from Sebastian. If security software or your
+   organization blocks it, ask Sebastian; do not disable security protection.
+
+2. On your Android phone, open NotebookScanner-0.5.apk to install it.
+   Download/extract the ZIP on the phone too, or transfer just the APK to it.
+   Android may ask you to allow installs from your browser or file manager.
+   No developer mode is needed. Open Notebook Scanner after installation.
+
+3. Turn Bluetooth on on both devices. In the normal Bluetooth settings, pair
+   your phone and laptop and check that the pairing codes match.
+
+4. On your phone, allow Nearby devices permission if asked. Choose your laptop
+   in the scanner's Settings and tap Connect to this laptop.
+   On Windows, choose your phone and click Connect. Approve access if asked.
+
+TAKE A PHOTO
+
+5. On the phone, tap Camera. Take a photo, then accept the camera's confirmation.
+   Wait for the scanner to say it has been copied on your laptop.
+   Click your unsent ChatGPT draft and press Ctrl+V. Send the message yourself.
+
+After setup, open both apps in either order. They remember the devices; the phone
+opens its usual camera automatically. Keep the laptop awake and phone unlocked.
+Bluetooth must be on; Wi-Fi is not needed for the transfer. Downloading the apps
+or using online ChatGPT can still require internet. You can test an offline paste
+in Paint instead. The apps do not automatically open each other.
+
+SETTINGS
+
+On the phone, press Back from the camera to reach the scanner's Settings.
+To get completion notifications, tap Allow completion notifications there.
+On Windows, Settings has a notification checkbox and Set keyboard shortcut.
+Notifications mean copied to your clipboard, not sent to ChatGPT.
+An interrupted photo is not automatically resent: reconnect and retake it.
+
+UPDATES AND REMOVAL
+
+Install later versions over these apps; keep receiving updates from Sebastian.
+If you already installed an earlier 0.4 development APK, it uses a different
+signing certificate. You must uninstall that OLD phone app before installing 0.5,
+then choose your laptop again. This clears the old app's saved preferences.
+This is only the transition from the old development build, not normal updates.
+Close older portable Windows copies before using the installed version.
+Remove Notebook Scanner in Windows Settings > Apps, or uninstall normally on
+Android. Windows saved preferences are retained for a future reinstall.
+
+PLEASE REPORT
+
+Try setup using only these instructions. Then test a photo with Wi-Fi off,
+closing/reopening both apps, notifications, and the Windows keyboard shortcut.
+Send Sebastian confusing steps, exact error text/screenshots, phone model,
+Android version, Windows version, and roughly how long a photo takes.
+No need to send private notebook pages; any sample page will do.
+
+This is an early beta; another person's hardware may behave differently.
+Source and MIT license: https://github.com/FormerlyCB5K/Notebook-Scanner

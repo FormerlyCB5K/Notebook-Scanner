@@ -6,9 +6,39 @@ android {
         applicationId 'org.notebookscanner'
         minSdk 28
         targetSdk 35
-        versionCode 4
-        versionName '0.4.0'
+        versionCode 5
+        versionName '0.5.0'
     }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    def releaseStore = System.getenv('NOTEBOOK_SIGNING_STORE')
+    def releasePassword = System.getenv('NOTEBOOK_SIGNING_PASSWORD')
+    if (releaseStore && releasePassword) {
+        signingConfigs {
+            release {
+                storeFile file(releaseStore)
+                storePassword releasePassword
+                keyAlias 'notebook-scanner'
+                keyPassword releasePassword
+            }
+        }
+        buildTypes { release { signingConfig signingConfigs.release } }
+    }
+}
+gradle.taskGraph.whenReady { graph ->
+    if (graph.allTasks.any { it.project == project && it.name.toLowerCase().contains('release') } &&
+        (!System.getenv('NOTEBOOK_SIGNING_STORE') || !System.getenv('NOTEBOOK_SIGNING_PASSWORD'))) {
+        throw new GradleException('Release signing is required. Use tools/build-android-release.ps1 with your private signing folder.')
+    }
 }
 dependencies { implementation 'androidx.core:core:1.13.1' }
+
+// Keep license text with the standalone APK, not only in the share ZIP.
+def licenseAssets = layout.buildDirectory.dir('generated/licenseAssets')
+def copyLicenseAssets = tasks.register('copyLicenseAssets', Copy) {
+    from(rootProject.file('../LICENSE'))
+    from(rootProject.file('../THIRD_PARTY_NOTICES.md'))
+    from(rootProject.file('../LICENSES')) { include 'Gradle-Apache-2.0.txt'; into 'LICENSES' }
+    into(licenseAssets)
+}
+android.sourceSets.main.assets.srcDir(licenseAssets)
+tasks.named('preBuild').configure { dependsOn(copyLicenseAssets) }

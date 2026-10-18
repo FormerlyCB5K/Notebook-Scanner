@@ -49,7 +49,7 @@ sealed class ReceiverForm : Form
 
     public ReceiverForm(bool preview=false)
     {
-        Text = "Notebook Scanner — 0.4";
+        Text = "Notebook Scanner — 0.5 beta";
         ClientSize = new Size(680, 570);
         rememberedPhone = DeviceMemory.Read(memoryPath);
         var layout = new DawnPanel { Dock = DockStyle.Fill, Padding = new Padding(30), FlowDirection = FlowDirection.TopDown, WrapContents = false, AutoScroll=true };

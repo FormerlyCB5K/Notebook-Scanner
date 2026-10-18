@@ -101,3 +101,15 @@ Fill this in while testing; blank cells mean untested, not pass.
 The original proposed latency gates were median below 10 seconds and 95th percentile below 20 seconds. The user has accepted subjective speed for their workflow, so prioritize removing connection steps. Broader distribution can revisit formal timing and readability coverage later.
 
 Desktop reminder/portfolio follow-up: Windows publish succeeded, and the rendered main screen was visually checked for readable reminder text and a bottom-right portfolio link. Android was unchanged. The new executable is in dist/v0.4/windows-update because the prior build was running.
+
+## Version 0.5 local friends-and-family beta
+
+No scanner transport, compression, or remote-opening feature changed. This packages the existing workflow as a per-user Windows installer and non-debuggable, release-signed Android APK. The MIT license is included with both distributions and in APK assets.
+
+Windows publish succeeded. An initial vulnerability-metadata request failed in the restricted environment; the online restore/audit was rerun successfully. The existing 63 protocol checks, 8 connection/preferences scenarios, and 5 Android saved-device cases pass. Inno Setup 6.7.3 compiler download was verified using its valid Pyrsys B.V. Authenticode signature. The resulting Notebook Scanner installer itself remains unsigned.
+
+Temporary per-user installation, reinstall, byte-for-byte application verification, license/uninstaller presence, and uninstall passed without launching the app. The first test exposed that /NOICONS did not suppress the explicit Start Menu entry: the pre-existing shortcut was changed/removed by that test, then restored to the running original app and saved Ctrl+Alt+N hotkey. The corrected installer test uses /SKIPSHORTCUTS=1 and a private in-memory shortcut recovery copy; the rerun confirms the existing shortcut remains unchanged. Default interactive shortcut creation and installer UX still need a fresh-user trial.
+
+Android assembleRelease and lintRelease pass, with zero errors (29 warnings on the first release lint). APK signature validation succeeds with the documented permanent certificate fingerprint; versionCode=5/versionName=0.5.0. Permission scope remains Bluetooth/notifications, with no Internet/Wi-Fi/location/direct-camera permission. The private key/password are under an owner-only access-controlled, ignored folder; an independent encrypted backup is still the owner's responsibility. No signing material belongs in share or source archives.
+
+The brother's actual hardware trial is pending: first pairing, Android installation permissions, Wi-Fi-off capture-to-paste, notifications, Windows hotkey and second-device interoperability. Reinstalling the same Windows package is checked; upgrading Android on a physical phone is not. The 0.4 development APK uses another certificate and must be uninstalled before moving that phone to 0.5. No public release was published.

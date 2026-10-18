@@ -19,11 +19,11 @@ Android: generate a dedicated private release signing key, never commit it or it
 
 Windows: prepare the installer first. Trusted Windows code signing is a separate decision involving publisher identity verification and potentially cost. Do not buy a certificate, create an account, or claim a trusted publisher without the owner's involvement. A limited unsigned beta is an option if its download page clearly explains that it is unsigned; a self-signed certificate is not a substitute for public trust. Signing does not guarantee that every Windows reputation warning disappears.
 
-No private release key, signing-service account, paid certificate, or public binary release has been created as part of this plan.
+Version 0.5 now has a locally generated private release key, a release-signed APK, a per-user Windows installer, and a share ZIP. The owner still needs an independent encrypted signing backup; see [maintainer instructions](BUILDING-RELEASE.md). No signing-service account, paid certificate, or public binary release has been created.
 
 ## Fresh-user trial
 
-The owner's roommate can test a locally shared beta before public distribution. Test without developer tools installed. Verify install/uninstall, first pairing and permissions, Wi-Fi-off capture-to-paste, reconnect after closing either app, hotkey launch/show, completion notifications only after copying, and installing a second build as an update. Record actual phone/Windows versions and any confusing steps. A local build or automated test cannot replace this trial.
+The owner's brother is the first available tester for the locally shared beta before public distribution. Test without developer tools installed. Verify install/uninstall, first pairing and permissions, Wi-Fi-off capture-to-paste, reconnect after closing either app, hotkey launch/show, completion notifications only after copying, and installing a second build as an update. Record actual phone/Windows versions and any confusing steps. A local build or automated test cannot replace this trial.
 
 ## References
 

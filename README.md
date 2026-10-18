@@ -2,7 +2,7 @@
 
 **Source preview — downloadable releases have not been published yet.** The paths below describe local test builds and are not files included in this repository. Packaging and public distribution are still being decided.
 
-**Latest: version 0.4.** Open `dist/v0.4/windows-update/NotebookScanner.exe` and install `dist/v0.4/android/NotebookScanner-0.4.apk` over the phone app. This adds the approved before-dawn appearance, desktop shortcut settings and completion notifications. Earlier instructions below still describe the same Bluetooth/camera workflow.
+**Latest local beta: version 0.5.** Share `dist/v0.5/NotebookScanner-0.5-Friends-and-Family.zip`, containing a Windows installer, a release-signed Android APK, and START-HERE.txt. See [the beginner instructions](docs/FRIENDS-AND-FAMILY.txt) and [maintainer build/signing notes](docs/BUILDING-RELEASE.md). Windows remains unsigned. If upgrading a phone from the earlier 0.4 development APK, uninstall that old phone app first: its certificate differs, so this clears saved preferences. Fresh installations do not need this step. No public download release has been published.
 
 * Desktop: **Settings → Set keyboard shortcut**, choose a Ctrl+Alt+letter chord and Save. The Windows Start Menu shortcut can launch the app when closed and show the existing app when running. Close older copies before using this version.
 * Phone: press Back from the standard camera, open **Settings**, and tap **Allow completion notifications** once. Android may ask permission. Desktop notifications have their own checkbox in desktop Settings.
@@ -18,10 +18,10 @@ An early Android → Windows notebook-photo-to-clipboard experiment. Open both a
 
 You do **not** need developer tools to use prebuilt versions. The local `dist` folder contains build outputs when produced. Windows x64 is the first desktop target; ARM64 can be built separately. The phone requires Android 9 or later and Bluetooth Classic. The Windows source targets Windows 10 build 19041 or later; use a currently maintained Windows installation.
 
-1. Close older Windows copies of Notebook Scanner, then open **`dist/v0.4/windows-update/NotebookScanner.exe`**. It bundles .NET and remains unsigned. Public signing/distribution is unfinished.
-2. Transfer **`dist/v0.4/android/NotebookScanner-0.4.apk`** to your phone and open it to install/update Notebook Scanner. You can use Windows right-click → Show more options → Send to → Bluetooth device, select your S23, accept the transfer, and open the received APK from My Files/Downloads. No cable or developer mode is needed. This remains a debug/test build. The local APK uses the same signing certificate as the original test build, so you can update over it.
+1. Close older Windows copies of Notebook Scanner, then run **`dist/v0.5/windows/NotebookScanner-0.5-Windows-Setup.exe`** to install, and open Notebook Scanner from the Start Menu. It bundles .NET and remains unsigned. Public signing/distribution is unfinished.
+2. Transfer **`dist/v0.5/android/NotebookScanner-0.5.apk`** to your phone and open it to install/update Notebook Scanner. You can use Windows right-click → Show more options → Send to → Bluetooth device, select your S23, accept the transfer, and open the received APK from My Files/Downloads. No cable or developer mode is needed. This is a release-signed test build. For an existing 0.4 development installation, uninstall that old phone app first and select the laptop again; fresh testers can install directly. Preserve the release signing identity for future updates.
 3. Keep Bluetooth enabled and the devices paired in normal OS settings. Existing pairing is enough; you do not need to pair again for each session.
-4. **First-ever setup:** allow Nearby devices if asked, choose your laptop, and tap **Connect to this laptop** in Settings. Existing device choices migrate from version 0.2; an update should not require choosing again.
+4. **First-ever setup:** allow Nearby devices if asked, choose your laptop, and tap **Connect to this laptop** in Settings. Later updates signed with the same release key should retain your choice. Moving from the old development APK requires choosing again after uninstalling it.
 5. **First-ever Windows setup:** choose your phone and click **Connect**. Windows remembers successful connections and waits/retries if the phone app is not ready yet. Approve Bluetooth access if Windows asks.
 6. For your first photo after brand-new setup, tap the **Camera** tab. On later app opens the standard camera launches automatically. Photograph your page and accept the phone camera's confirmation. Keep the phone unlocked.
 7. Wait for **Copied on laptop**, click your draft, and press **Ctrl+V**. The app never presses Send. Another successful photo replaces the clipboard image.
@@ -110,7 +110,3 @@ The included `.github/workflows/build.yml` builds both platforms and runs the pr
 This is native Android + native Windows, deliberately platform-specific. The framing could be reused elsewhere, but macOS/iOS/Linux support would require new platform work. The system camera is the camera UI for now; it may add a confirmation tap. Remembered peers and reconnecting while apps are open are included. No document cropping, OCR, background service, tray icon, launch at login, remote shutter, clipboard monitoring or ChatGPT integration is included.
 
 Before broad sharing: pass the hardware tests, fix relevant lifecycle/driver issues, update compiler/runtime targets, keep stable release signing keys, sign the Windows build, and produce a signed Android release APK or store bundle. Original source is MIT-licensed; see LICENSE. The Gradle wrapper retains its own upstream Apache-2.0 notices. See [the distribution plan](docs/DISTRIBUTION.md) for installation, signing, and the fresh-user beta trial. Public downloads remain unpublished.
-
-
-
-
