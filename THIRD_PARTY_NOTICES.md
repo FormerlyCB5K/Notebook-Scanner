@@ -8,4 +8,4 @@ Android builds resolve AndroidX Core 1.13.1 and its transitive dependencies from
 
 The self-contained Windows build bundles the Microsoft .NET/Windows Desktop runtime and Windows SDK projections under their respective licenses/notices. These components are build outputs, not original application source. See the .NET [third-party notices](https://github.com/dotnet/runtime/blob/main/THIRD-PARTY-NOTICES.TXT) and [license](https://github.com/dotnet/runtime/blob/main/LICENSE.TXT). Keep vendor-provided license/notice files when packaging runtime distributions.
 
-Original project source has no selected public license yet. Choose one before publishing as an open-source project. This does not override any upstream component license.
+Original project source is licensed under the MIT License; see `LICENSE`. This does not override any upstream component license.

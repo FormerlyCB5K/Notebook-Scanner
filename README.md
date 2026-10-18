@@ -109,7 +109,8 @@ The included `.github/workflows/build.yml` builds both platforms and runs the pr
 
 This is native Android + native Windows, deliberately platform-specific. The framing could be reused elsewhere, but macOS/iOS/Linux support would require new platform work. The system camera is the camera UI for now; it may add a confirmation tap. Remembered peers and reconnecting while apps are open are included. No document cropping, OCR, background service, tray icon, launch at login, remote shutter, clipboard monitoring or ChatGPT integration is included.
 
-Before broad sharing: pass the hardware tests, fix relevant lifecycle/driver issues, update compiler/runtime targets, choose a project license, keep stable release signing keys, sign the Windows build, and produce a signed Android release APK or store bundle. No license has been chosen on your behalf; the Gradle wrapper retains its own upstream Apache-2.0 notices. Publishing is not part of this local prototype.
+Before broad sharing: pass the hardware tests, fix relevant lifecycle/driver issues, update compiler/runtime targets, keep stable release signing keys, sign the Windows build, and produce a signed Android release APK or store bundle. Original source is MIT-licensed; see LICENSE. The Gradle wrapper retains its own upstream Apache-2.0 notices. See [the distribution plan](docs/DISTRIBUTION.md) for installation, signing, and the fresh-user beta trial. Public downloads remain unpublished.
+
 
 
 

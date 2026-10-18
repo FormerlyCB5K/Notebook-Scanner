@@ -20,6 +20,7 @@ jobs:
             dist/win-x64/NotebookScanner.exe
             dist/win-x64/LICENSES/
             dist/win-x64/THIRD_PARTY_NOTICES.md
+            dist/win-x64/LICENSE
   android:
     runs-on: ubuntu-latest
     steps:
